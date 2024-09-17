@@ -14,9 +14,9 @@
             <p>{{i.discription}}</p>
             
             <div class="search-input">
-              <form id="search" role="search" method="POST" action="{% url 'search'%}" novalidate>
+              <form id="search" role="search" method="POST" action="{% url 'homescreen:search'%}" novalidate>
                 {%csrf_token%}
-                <input type="Search" placeholder="Type Something" name="searchKeyword" required aria-label="Search" />
+                <input type="Search" placeholder="Type Something" name="searchKeyword" />
                 <button role="button" type="submit">جست و جو</button>
               </form>
             </div>

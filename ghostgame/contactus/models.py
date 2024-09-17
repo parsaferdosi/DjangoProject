@@ -7,4 +7,4 @@ class ticket(models.Model):
     email=models.EmailField(max_length=256)
     subject=models.CharField(max_length=16)
     message=models.TextField()
-    timecreat=models.TimeField()
+    timecreate=models.DateField(auto_now_add=True)
