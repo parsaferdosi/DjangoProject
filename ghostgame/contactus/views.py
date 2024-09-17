@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .form import ticketform
+from .forms import ticketform
 from .models import ticket
 def ticketmanager(request):
     if request.method=="POST":
