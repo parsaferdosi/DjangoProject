@@ -8,3 +8,4 @@ class ticket(models.Model):
     subject=models.CharField(max_length=16)
     message=models.TextField()
     timecreate=models.DateField(auto_now_add=True)
+    
