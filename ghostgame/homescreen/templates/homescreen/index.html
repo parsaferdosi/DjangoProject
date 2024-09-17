@@ -1,0 +1,95 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body%}
+  <!-- ***** Header Area End ***** -->
+{%for i in a %}
+{%if i.suggestion%}
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="caption header-text">
+            <h6>پیشنهاد داغ امروز</h6>
+            <h2>{{i.gamename}}</h2>
+            <p>{{i.discription}}</p>
+            
+            <div class="search-input">
+              <form id="search" role="search" method="POST" action="{% url 'search'%}" novalidate>
+                {%csrf_token%}
+                <input type="Search" placeholder="Type Something" name="searchKeyword" required aria-label="Search" />
+                <button role="button" type="submit">جست و جو</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-2">
+          <div class="right-image">
+            <img src=" media/{{i.gameImage}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endif%}
+  {%endfor%}
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'assets/images/featured-01.png' %}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>دانلود نیم بها</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'assets/images/featured-02.png'%}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>دیتای خام استیم</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'assets/images/featured-03.png'%}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>دیدن گیمپلی بازی</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{% static 'assets/images/featured-04.png'%}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>دسترسی راحت</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Ghostgame.com<br>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+{%endblock%}
